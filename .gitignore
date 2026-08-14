@@ -6,3 +6,4 @@ __pycache__
 # interview-private prep docs — never publish
 TALK_TRACK.md
 CHEATSHEET.md
+.streamlit-secrets.local
