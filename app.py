@@ -5,7 +5,18 @@ Tabs: Ask (agentic RAG) · Daily Brief (Slack Block Kit) · Evaluation · Traces
 """
 from __future__ import annotations
 
+import os
+
 import streamlit as st
+
+# Streamlit Cloud exposes secrets via st.secrets, not the process env.
+# Mirror them into os.environ BEFORE the ronin modules read their keys.
+try:
+    for _k, _v in st.secrets.items():
+        if isinstance(_v, str) and _k not in os.environ:
+            os.environ[_k] = _v
+except Exception:
+    pass  # no secrets file (local dev uses ~/.config fallbacks)
 
 from ronin.config import get_settings
 from ronin.embeddings import get_embedder
