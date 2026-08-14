@@ -1,0 +1,13 @@
+{
+  "currency": "USD",
+  "updated": "2026-06-15",
+  "notes": "Margin = (map - unit_cost) / map. Used by the knowledge agent for margin questions.",
+  "items": [
+    { "sku": "RA-GI-SHOGUN-A2-BLK", "msrp": 149.0, "map": 129.0, "unit_cost": 58.0, "margin_pct_at_map": 55.0 },
+    { "sku": "RA-RG-TENGU-LS-M",    "msrp": 59.0,  "map": 49.0,  "unit_cost": 17.5, "margin_pct_at_map": 64.3 },
+    { "sku": "RA-SH-KAGE-GRP-32",   "msrp": 54.0,  "map": 44.0,  "unit_cost": 15.0, "margin_pct_at_map": 65.9 },
+    { "sku": "RA-SP-YUREI-LS-L",    "msrp": 49.0,  "map": 39.0,  "unit_cost": 14.0, "margin_pct_at_map": 64.1 },
+    { "sku": "RA-BELT-IBJJF-BLU-A3","msrp": 24.0,  "map": 19.0,  "unit_cost": 5.5,  "margin_pct_at_map": 71.1 },
+    { "sku": "RA-HD-RONIN-CORE-L",  "msrp": 64.0,  "map": 54.0,  "unit_cost": 19.0, "margin_pct_at_map": 64.8 }
+  ]
+}

@@ -1,0 +1,8 @@
+.venv
+__pycache__
+*.pyc
+.env
+.env.*
+# interview-private prep docs — never publish
+TALK_TRACK.md
+CHEATSHEET.md
