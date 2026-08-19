@@ -38,6 +38,12 @@ def _judge(question: str, context: str, answer: str) -> dict:
 
 
 def evaluate() -> dict:
+    # Batch-embed every golden question up front: one embeddings request
+    # instead of one per case (the free Voyage tier allows 3 requests/min).
+    from ..embeddings import get_embedder
+
+    get_embedder().embed_queries([case["question"] for case in EVAL_SET])
+
     rows = []
     for case in EVAL_SET:
         q = case["question"]
