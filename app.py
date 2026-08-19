@@ -92,8 +92,17 @@ with tab_eval:
     st.caption("LLM-as-judge + deterministic checks over a golden set. RAGAS-compatible metric surface.")
     if st.button("Run evaluation", type="primary"):
         from ronin.eval.run_eval import evaluate
-        with st.spinner("scoring the golden set…"):
-            result = evaluate()
+        try:
+            with st.spinner("scoring the golden set… (~1 min: 6 cases × LLM judge)"):
+                result = evaluate()
+        except Exception as exc:  # noqa: BLE001
+            if type(exc).__name__ == "RateLimitError":
+                st.warning(
+                    "The embeddings provider (free tier) is rate-limited right now. "
+                    "Wait ~1 minute and run again — results are cached after the first pass."
+                )
+                st.stop()
+            raise
         sm = result["summary"]
         c = st.columns(5)
         c[0].metric("Retrieval hit", f"{sm['retrieval_hit_rate']*100:.0f}%")
