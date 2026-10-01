@@ -6,3 +6,4 @@ __pycache__
 .streamlit-secrets.local
 .traces/
 *.lock
+.state/

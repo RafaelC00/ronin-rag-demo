@@ -38,7 +38,7 @@ def _inventory_risks() -> list[str]:
 
 
 def report_node(state: AgentState) -> dict:
-    steps = list(state.get("steps", []))
+    steps: list[str] = []  # new steps only (steps is an append reducer)
     with span("report.gather_facts") as sp:
         facts = _compute_facts()
         risks = _inventory_risks()

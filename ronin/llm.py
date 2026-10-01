@@ -14,7 +14,18 @@ from tenacity import retry, stop_after_attempt, wait_exponential
 from .config import Settings, get_settings
 
 
+# USD per 1M tokens (input, output) for cost reporting in the eval harness.
+_PRICES = {
+    "anthropic/claude-sonnet-4.5": (3.0, 15.0),
+    "anthropic/claude-haiku-4.5": (1.0, 5.0),
+}
+
+
 class LLM:
+    prompt_tokens = 0
+    completion_tokens = 0
+    calls = 0
+
     def __init__(self, settings: Settings | None = None):
         self.s = settings or get_settings()
         self.provider = self.s.ronin_llm_provider
@@ -52,6 +63,11 @@ class LLM:
                 temperature=temperature,
                 max_tokens=max_tokens,
             )
+            u = getattr(resp, "usage", None)
+            if u is not None:
+                self.prompt_tokens += u.prompt_tokens or 0
+                self.completion_tokens += u.completion_tokens or 0
+            self.calls += 1
             return resp.choices[0].message.content or ""
         if self.provider == "anthropic":
             resp = self._client.messages.create(
@@ -68,6 +84,15 @@ class LLM:
             resp = self._client.invoke_model(modelId=self.model, body=body)
             return json.loads(resp["body"].read())["content"][0]["text"]
         raise ValueError(self.provider)
+
+    def usage(self) -> dict:
+        """Token counts and an estimated USD cost for this process (openrouter path)."""
+        pin, pout = _PRICES.get(self.model, (0.0, 0.0))
+        return {
+            "calls": self.calls, "prompt_tokens": self.prompt_tokens,
+            "completion_tokens": self.completion_tokens,
+            "est_cost_usd": round((self.prompt_tokens * pin + self.completion_tokens * pout) / 1e6, 4),
+        }
 
     def json(self, system: str, user: str, temperature: float = 0.0, max_tokens: int = 1024) -> dict:
         """Ask for strict JSON and parse it, tolerating markdown fences."""

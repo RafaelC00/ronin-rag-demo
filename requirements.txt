@@ -10,7 +10,8 @@ voyageai>=0.2.3              # lib: embeddings + rerank (activates with VOYAGE_A
 rank-bm25>=0.2.2             # sparse retrieval for hybrid search
 
 # Agent orchestration (lib)
-langgraph>=0.2.28
+langgraph>=1.0            # interrupt() + Command(resume=...) API
+langgraph-checkpoint-sqlite>=3.0   # local SQLite checkpointer (no service)
 langchain-core>=0.3.0
 
 # Observability (lib) — optional, activates with LANGFUSE_* keys
