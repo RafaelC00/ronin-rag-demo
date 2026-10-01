@@ -1,0 +1,260 @@
+[
+  {
+    "source": "catalog",
+    "type": "product",
+    "title": "Shogun Competition Gi",
+    "sku": "RA-GI-SHOGUN-A2-BLK",
+    "text": "Product: Shogun Competition Gi (Shogun line, BJJ Gi). SKU RA-GI-SHOGUN-A2-BLK, ASIN B0RONIN001. Color Black, size A2. MSRP $149.0, MAP $129.0, unit cost $58.0. Amazon BSR #1, rating 4.8 from 3421 reviews. Inventory 1840 units. Flagship IBJJF-legal competition gi. #1 BSR in Martial Arts Uniforms.",
+    "id": 0
+  },
+  {
+    "source": "catalog",
+    "type": "product",
+    "title": "Shogun Competition Gi",
+    "sku": "RA-GI-SHOGUN-A2-WHT",
+    "text": "Product: Shogun Competition Gi (Shogun line, BJJ Gi). SKU RA-GI-SHOGUN-A2-WHT, ASIN B0RONIN002. Color White, size A2. MSRP $149.0, MAP $129.0, unit cost $58.0. Amazon BSR #3, rating 4.8 from 2988 reviews. Inventory 1210 units. White colorway of the flagship. IBJJF-legal.",
+    "id": 1
+  },
+  {
+    "source": "catalog",
+    "type": "product",
+    "title": "Tengu Long-Sleeve Rashguard",
+    "sku": "RA-RG-TENGU-LS-M",
+    "text": "Product: Tengu Long-Sleeve Rashguard (Tengu line, Rashguard). SKU RA-RG-TENGU-LS-M, ASIN B0RONIN010. Color Navy, size M. MSRP $59.0, MAP $49.0, unit cost $17.5. Amazon BSR #2, rating 4.7 from 5102 reviews. Inventory 3600 units. Best-selling rashguard. Sublimated print, flatlock seams.",
+    "id": 2
+  },
+  {
+    "source": "catalog",
+    "type": "product",
+    "title": "Kage Grappling Shorts",
+    "sku": "RA-SH-KAGE-GRP-32",
+    "text": "Product: Kage Grappling Shorts (Kage line, Grappling Shorts). SKU RA-SH-KAGE-GRP-32, ASIN B0RONIN020. Color Black/Red, size 32. MSRP $54.0, MAP $44.0, unit cost $15.0. Amazon BSR #6, rating 4.6 from 2210 reviews. Inventory 2750 units. Hybrid grappling/MMA short with internal drawcord.",
+    "id": 3
+  },
+  {
+    "source": "catalog",
+    "type": "product",
+    "title": "Yurei Spats",
+    "sku": "RA-SP-YUREI-LS-L",
+    "text": "Product: Yurei Spats (Yurei line, Spats). SKU RA-SP-YUREI-LS-L, ASIN B0RONIN030. Color Charcoal, size L. MSRP $49.0, MAP $39.0, unit cost $14.0. Amazon BSR #11, rating 4.7 from 1440 reviews. Inventory 980 units. Compression spats, often bundled with Tengu rashguard.",
+    "id": 4
+  },
+  {
+    "source": "catalog",
+    "type": "product",
+    "title": "IBJJF Ranked Belt",
+    "sku": "RA-BELT-IBJJF-BLU-A3",
+    "text": "Product: IBJJF Ranked Belt (Ranked line, Belt). SKU RA-BELT-IBJJF-BLU-A3, ASIN B0RONIN040. Color Blue, size A3. MSRP $24.0, MAP $19.0, unit cost $5.5. Amazon BSR #4, rating 4.9 from 6730 reviews. Inventory 5400 units. High-attach-rate accessory. Frequently added to gi orders.",
+    "id": 5
+  },
+  {
+    "source": "catalog",
+    "type": "product",
+    "title": "Ronin Core Hoodie",
+    "sku": "RA-HD-RONIN-CORE-L",
+    "text": "Product: Ronin Core Hoodie (Core line, Hoodie). SKU RA-HD-RONIN-CORE-L, ASIN B0RONIN050. Color Heather Grey, size L. MSRP $64.0, MAP $54.0, unit cost $19.0. Amazon BSR #22, rating 4.5 from 812 reviews. Inventory 430 units. Lifestyle/streetwear line. Lower velocity, higher margin.",
+    "id": 6
+  },
+  {
+    "source": "pricing",
+    "type": "pricing",
+    "title": "RA-GI-SHOGUN-A2-BLK",
+    "sku": "RA-GI-SHOGUN-A2-BLK",
+    "text": "Pricing/margin for SKU RA-GI-SHOGUN-A2-BLK: MSRP $149.0, MAP $129.0, unit cost $58.0, gross margin at MAP 55.0%.",
+    "id": 7
+  },
+  {
+    "source": "pricing",
+    "type": "pricing",
+    "title": "RA-RG-TENGU-LS-M",
+    "sku": "RA-RG-TENGU-LS-M",
+    "text": "Pricing/margin for SKU RA-RG-TENGU-LS-M: MSRP $59.0, MAP $49.0, unit cost $17.5, gross margin at MAP 64.3%.",
+    "id": 8
+  },
+  {
+    "source": "pricing",
+    "type": "pricing",
+    "title": "RA-SH-KAGE-GRP-32",
+    "sku": "RA-SH-KAGE-GRP-32",
+    "text": "Pricing/margin for SKU RA-SH-KAGE-GRP-32: MSRP $54.0, MAP $44.0, unit cost $15.0, gross margin at MAP 65.9%.",
+    "id": 9
+  },
+  {
+    "source": "pricing",
+    "type": "pricing",
+    "title": "RA-SP-YUREI-LS-L",
+    "sku": "RA-SP-YUREI-LS-L",
+    "text": "Pricing/margin for SKU RA-SP-YUREI-LS-L: MSRP $49.0, MAP $39.0, unit cost $14.0, gross margin at MAP 64.1%.",
+    "id": 10
+  },
+  {
+    "source": "pricing",
+    "type": "pricing",
+    "title": "RA-BELT-IBJJF-BLU-A3",
+    "sku": "RA-BELT-IBJJF-BLU-A3",
+    "text": "Pricing/margin for SKU RA-BELT-IBJJF-BLU-A3: MSRP $24.0, MAP $19.0, unit cost $5.5, gross margin at MAP 71.1%.",
+    "id": 11
+  },
+  {
+    "source": "pricing",
+    "type": "pricing",
+    "title": "RA-HD-RONIN-CORE-L",
+    "sku": "RA-HD-RONIN-CORE-L",
+    "text": "Pricing/margin for SKU RA-HD-RONIN-CORE-L: MSRP $64.0, MAP $54.0, unit cost $19.0, gross margin at MAP 64.8%.",
+    "id": 12
+  },
+  {
+    "source": "competitors",
+    "type": "competitor",
+    "title": "Osoto Athletics",
+    "text": "Competitor Osoto Athletics — flagship Osoto Pro Competition Gi (ASIN B0OSOTO111) at $119.0, Amazon BSR #5, rating 4.5 (1980 reviews). Positioning: Value competitor undercutting on gi price by ~8%. Recent move: Dropped gi price from 129 to 119 on 2026-06-10 and bought Sponsored Brands placement on 'bjj gi'.",
+    "id": 13
+  },
+  {
+    "source": "competitors",
+    "type": "competitor",
+    "title": "Guard Pass Gear",
+    "text": "Competitor Guard Pass Gear — flagship GPG Elite Rashguard (ASIN B0GPG222) at $44.0, Amazon BSR #8, rating 4.6 (3120 reviews). Positioning: Rashguard-first brand, aggressive on print variety. Recent move: Launched 6 new rashguard prints; climbing BSR in rashguard subcategory.",
+    "id": 14
+  },
+  {
+    "source": "competitors",
+    "type": "competitor",
+    "title": "Submission Co",
+    "text": "Competitor Submission Co — flagship Sub Co Grappling Short (ASIN B0SUBCO333) at $39.0, Amazon BSR #9, rating 4.4 (1510 reviews). Positioning: Budget shorts and spats. Recent move: Coupon promo (15% off) running through end of June.",
+    "id": 15
+  },
+  {
+    "source": "competitors",
+    "type": "competitor",
+    "title": "IronClad Combat",
+    "text": "Competitor IronClad Combat — flagship IronClad Heavyweight Gi (ASIN B0IRON444) at $159.0, Amazon BSR #14, rating 4.7 (990 reviews). Positioning: Premium heavyweight gi, higher price point. Recent move: Stable. No pricing changes in last 30 days.",
+    "id": 16
+  },
+  {
+    "source": "policies",
+    "type": "doc",
+    "title": "Ronin Athletics — Policies (Internal)",
+    "text": "# Ronin Athletics — Policies (Internal)",
+    "id": 17
+  },
+  {
+    "source": "policies",
+    "type": "doc",
+    "title": "MAP (Minimum Advertised Price) Policy",
+    "text": "## MAP (Minimum Advertised Price) Policy\n- MAP is enforced on all marketplaces including Amazon. Advertising below MAP is a violation.\n- Current MAP: Shogun Gi $129, Tengu Rashguard $49, Kage Shorts $44, Yurei Spats $39, Ranked Belt $19, Core Hoodie $54.\n- Promotional exception: coupons up to 15% off MAP are permitted during official sale windows (Black Friday, Prime Day, brand anniversary in July). Anything deeper requires VP Sales sign-off.\n- MAP violations by a reseller trigger a 2-strike process: written warning, then supply suspension.",
+    "id": 18
+  },
+  {
+    "source": "policies",
+    "type": "doc",
+    "title": "Return & Refund Policy (DTC + Amazon)",
+    "text": "## Return & Refund Policy (DTC + Amazon)\n- 30-day returns on unworn items with tags. Gis must be unwashed.\n- Amazon FBA returns follow Amazon's standard policy; we do not extend beyond 30 days.\n- Defective items (stitching, print peel) are replaced free within 90 days — this is a warranty claim, not a return.\n- Refunds are processed to the original payment method within 5 business days of receiving the item.",
+    "id": 19
+  },
+  {
+    "source": "policies",
+    "type": "doc",
+    "title": "Warranty",
+    "text": "## Warranty\n- 90-day workmanship warranty on all gis and rashguards (seams, stitching, sublimation).\n- Belts and accessories carry a 30-day warranty.\n- Warranty does not cover normal wear, improper washing (hot water / bleach), or competition damage.",
+    "id": 20
+  },
+  {
+    "source": "policies",
+    "type": "doc",
+    "title": "Shipping SLA",
+    "text": "## Shipping SLA\n- DTC orders ship within 1 business day; 2-5 day delivery in the continental US.\n- Amazon FBA handles Prime SLA for FBA ASINs.\n- Free DTC shipping over $99.",
+    "id": 21
+  },
+  {
+    "source": "policies",
+    "type": "doc",
+    "title": "Amazon Account Health Guardrails",
+    "text": "## Amazon Account Health Guardrails\n- Never advertise below MAP on Amazon (protects Buy Box and brand).\n- Order Defect Rate (ODR) target < 1%. Late Shipment Rate target < 4%.\n- Any listing suppression or policy warning is a P1 incident — escalate to the Amazon channel owner immediately.",
+    "id": 22
+  },
+  {
+    "source": "sops",
+    "type": "doc",
+    "title": "Ronin Athletics — Standard Operating Procedures (Internal)",
+    "text": "# Ronin Athletics — Standard Operating Procedures (Internal)",
+    "id": 23
+  },
+  {
+    "source": "sops",
+    "type": "doc",
+    "title": "SOP-01: Responding to a BSR Drop",
+    "text": "## SOP-01: Responding to a BSR Drop\nWhen a flagship ASIN's Best Seller Rank worsens (higher number) by more than 3 positions week-over-week:\n1. Check whether a competitor changed price or launched a Sponsored placement (see competitor tracker).\n2. Verify our Buy Box is intact and price is at MAP (never below).\n3. Check inventory — a BSR drop plus low inventory usually means we are being suppressed on availability.\n4. If competitor undercut on price and our margin allows, request a coupon (up to 15% off MAP) rather than a MAP change.\n5. Post a summary to the #amazon-ops channel and tag the channel owner.",
+    "id": 24
+  },
+  {
+    "source": "sops",
+    "type": "doc",
+    "title": "SOP-02: Listing Optimization Checklist",
+    "text": "## SOP-02: Listing Optimization Checklist\n- Title: brand + product line + key attribute + size/color, under 200 chars.\n- Bullets: lead with IBJJF-legal, GSM weight, seam construction, care.\n- A+ content refreshed each quarter.\n- Backend search terms include competitor brand-adjacent generic terms (never trademarked brand names).",
+    "id": 25
+  },
+  {
+    "source": "sops",
+    "type": "doc",
+    "title": "SOP-03: Review Response Protocol",
+    "text": "## SOP-03: Review Response Protocol\n- Respond to all 1-3 star reviews within 24 hours.\n- Defective-product reviews trigger a warranty replacement offer.\n- Never dispute a sizing complaint — point to the size chart and offer an exchange.",
+    "id": 26
+  },
+  {
+    "source": "sops",
+    "type": "doc",
+    "title": "SOP-04: Restock Rules",
+    "text": "## SOP-04: Restock Rules\n- Reorder trigger: 6 weeks of forward cover based on trailing 4-week velocity.\n- Flagship Shogun Gi never goes below 800 units on hand (stockout risk to #1 BSR).\n- Belts are high-attach accessories; keep 4+ weeks cover to protect gi conversion.",
+    "id": 27
+  },
+  {
+    "source": "sops",
+    "type": "doc",
+    "title": "SOP-05: Daily Amazon Brief (what the report agent compiles)",
+    "text": "## SOP-05: Daily Amazon Brief (what the report agent compiles)\nEvery morning the brief should include: flagship BSR and week-over-week delta, any competitor price/BSR moves, inventory risks (any SKU under reorder trigger), and one recommended action.",
+    "id": 28
+  },
+  {
+    "source": "brand",
+    "type": "doc",
+    "title": "Ronin Athletics — Brand Brief (Internal)",
+    "text": "# Ronin Athletics — Brand Brief (Internal)",
+    "id": 29
+  },
+  {
+    "source": "brand",
+    "type": "doc",
+    "title": "Positioning",
+    "text": "## Positioning\nRonin Athletics is the #1 Brazilian Jiu-Jitsu apparel brand on Amazon US. We make competition-grade, IBJJF-legal gear that a serious hobbyist or competitor can afford. \"Masterless warrior, disciplined craft.\"",
+    "id": 30
+  },
+  {
+    "source": "brand",
+    "type": "doc",
+    "title": "Target Customer",
+    "text": "## Target Customer\n- Core: 24-40 year old BJJ practitioners training 3+ times per week, blue-to-brown belt.\n- Secondary: MMA and grappling crossover athletes; gift buyers for practitioners.",
+    "id": 31
+  },
+  {
+    "source": "brand",
+    "type": "doc",
+    "title": "Voice",
+    "text": "## Voice\n- Confident, technical, respectful of the art. No hype, no fake scarcity.\n- We talk like a training partner who knows their gear, not a salesperson.",
+    "id": 32
+  },
+  {
+    "source": "brand",
+    "type": "doc",
+    "title": "Channels",
+    "text": "## Channels\n- Amazon US (primary, ~70% of revenue), Shopify DTC (~25%), wholesale to gyms (~5%).\n- Omnichannel: Amazon drives discovery; DTC captures repeat and higher-margin lifestyle line.",
+    "id": 33
+  },
+  {
+    "source": "brand",
+    "type": "doc",
+    "title": "Margin Philosophy",
+    "text": "## Margin Philosophy\n- Protect the #1 BSR on the flagship Shogun Gi at all costs — it is the top of the funnel.\n- Defend price with coupons and value, not MAP erosion.\n- Grow blended margin via accessories (belts, spats) and the higher-margin Core lifestyle line.",
+    "id": 34
+  }
+]

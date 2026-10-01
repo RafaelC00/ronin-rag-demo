@@ -1,0 +1,14 @@
+name: keepalive
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  visit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install puppeteer-core@23 --no-save
+      - run: node scripts/keepalive.mjs

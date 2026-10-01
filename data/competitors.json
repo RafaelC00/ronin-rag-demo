@@ -1,0 +1,51 @@
+{
+  "market": "Amazon US — Sports & Outdoors > Martial Arts > Uniforms & Apparel",
+  "snapshot_date": "2026-06-15",
+  "our_brand": "Ronin Athletics",
+  "competitors": [
+    {
+      "brand": "Osoto Athletics",
+      "flagship": "Osoto Pro Competition Gi",
+      "asin": "B0OSOTO111",
+      "price_usd": 119.0,
+      "amazon_bsr": 5,
+      "rating": 4.5,
+      "reviews": 1980,
+      "positioning": "Value competitor undercutting on gi price by ~8%",
+      "recent_move": "Dropped gi price from 129 to 119 on 2026-06-10 and bought Sponsored Brands placement on 'bjj gi'."
+    },
+    {
+      "brand": "Guard Pass Gear",
+      "flagship": "GPG Elite Rashguard",
+      "asin": "B0GPG222",
+      "price_usd": 44.0,
+      "amazon_bsr": 8,
+      "rating": 4.6,
+      "reviews": 3120,
+      "positioning": "Rashguard-first brand, aggressive on print variety",
+      "recent_move": "Launched 6 new rashguard prints; climbing BSR in rashguard subcategory."
+    },
+    {
+      "brand": "Submission Co",
+      "flagship": "Sub Co Grappling Short",
+      "asin": "B0SUBCO333",
+      "price_usd": 39.0,
+      "amazon_bsr": 9,
+      "rating": 4.4,
+      "reviews": 1510,
+      "positioning": "Budget shorts and spats",
+      "recent_move": "Coupon promo (15% off) running through end of June."
+    },
+    {
+      "brand": "IronClad Combat",
+      "flagship": "IronClad Heavyweight Gi",
+      "asin": "B0IRON444",
+      "price_usd": 159.0,
+      "amazon_bsr": 14,
+      "rating": 4.7,
+      "reviews": 990,
+      "positioning": "Premium heavyweight gi, higher price point",
+      "recent_move": "Stable. No pricing changes in last 30 days."
+    }
+  ]
+}

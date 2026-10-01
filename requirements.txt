@@ -1,0 +1,32 @@
+# Ronin Athletics — Agentic RAG
+# Core LLM / API access (OpenRouter is OpenAI-compatible; Bedrock-swappable adapter)
+openai>=1.40.0
+httpx>=0.27.0
+
+# Retrieval stack
+qdrant-client>=1.11.0        # vector store (embedded mode, no Docker)
+fastembed>=0.3.6             # local ONNX embeddings + reranker fallback (offline)
+voyageai>=0.2.3              # lib: embeddings + rerank (activates with VOYAGE_API_KEY)
+rank-bm25>=0.2.2             # sparse retrieval for hybrid search
+
+# Agent orchestration (lib)
+langgraph>=0.2.28
+langchain-core>=0.3.0
+
+# Observability (lib) — optional, activates with LANGFUSE_* keys
+langfuse>=2.44.0
+
+# Serving + UI
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+streamlit>=1.36.0
+
+# Utils
+pydantic>=2.6.0
+pydantic-settings>=2.2.0
+python-dotenv>=1.0.1
+tenacity>=8.2.0
+rich>=13.7.0
+
+# Optional (eval library). Custom LLM-judge harness works without it.
+# ragas>=0.2.0
