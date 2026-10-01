@@ -20,3 +20,36 @@ EVAL_SET = [
      "expected_sources": ["sops"],
      "must_include": ["800"]},
 ]
+
+# ---------------------------------------------------------------------------
+# Extension (written before any before/after run, and not edited since):
+# paraphrased and multi-hop questions, plus two questions the knowledge base
+# cannot answer. For those, `expected_sources` and `must_include` are empty and
+# the right behaviour is to say so; only the LLM-judged metrics apply.
+# ---------------------------------------------------------------------------
+EVAL_SET += [
+    {"question": "Can we run 20% off over the Black Friday weekend?",
+     "expected_sources": ["policies"],
+     "must_include": ["15%", "VP Sales"]},
+    {"question": "How long does a customer have to send a gi back, and is Amazon different?",
+     "expected_sources": ["policies"],
+     "must_include": ["30"]},
+    {"question": "What happens to a reseller who keeps advertising under MAP?",
+     "expected_sources": ["policies"],
+     "must_include": ["warning", "suspension"]},
+    {"question": "How many weeks of stock do we keep on belts?",
+     "expected_sources": ["sops"],
+     "must_include": ["4"]},
+    {"question": "Which product line earns us the best margin at MAP?",
+     "expected_sources": ["pricing", "catalog"],
+     "must_include": ["71"]},
+    {"question": "The flagship rank slipped 5 spots and a rival cut price: what steps do we follow and what is the biggest coupon we can offer?",
+     "expected_sources": ["sops"],
+     "must_include": ["coupon", "15%"]},
+    {"question": "How much did we spend on TikTok Shop ads last quarter?",
+     "expected_sources": [],
+     "must_include": []},
+    {"question": "Who is the head of the customer support team and what is their email?",
+     "expected_sources": [],
+     "must_include": []},
+]

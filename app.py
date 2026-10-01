@@ -20,7 +20,7 @@ except Exception:
 
 from ronin.config import get_settings
 from ronin.embeddings import get_embedder
-from ronin.agents.graph import run as run_graph
+from ronin.agents.graph import run as run_graph, resume as resume_graph, thread_state
 from ronin.agents.report import report_node
 from ronin.slack import to_json
 from ronin.tracing import recent_traces, backend, clear_traces
@@ -54,13 +54,32 @@ with tab_ask:
     st.subheader("Ask the agent fleet")
     q = st.text_input("Question", "What's the MAP price and gross margin on the flagship Shogun gi?")
     if st.button("Run", type="primary"):
-        with st.spinner("supervisor → routing → retrieving → generating…"):
-            state = run_graph(q)
+        with st.spinner("supervisor → routing → retrieving → grading → generating…"):
+            st.session_state["ask_state"] = run_graph(q)
+
+    state = st.session_state.get("ask_state")
+    if state:
         st.success(f"Routed to **{state.get('route')}** agent")
+        pending = state.get("pending")
+        if pending:
+            # the graph is paused at the human-in-the-loop gate; the thread is saved in SQLite
+            st.warning(pending["question"])
+            c_yes, c_no, _ = st.columns([1, 1, 6])
+            if c_yes.button("Approve", type="primary"):
+                with st.spinner("resuming…"):
+                    st.session_state["ask_state"] = resume_graph(state["thread_id"], True)
+                st.rerun()
+            if c_no.button("Decline"):
+                st.session_state["ask_state"] = resume_graph(state["thread_id"], False)
+                st.rerun()
         st.markdown(state.get("answer", ""))
         cites = state.get("citations", [])
         if cites:
             st.caption("Sources: " + " ".join(dict.fromkeys(cites)))
+        if state.get("attempts"):
+            st.caption(f"Retrievals: {state['attempts']} of {state['budget']} allowed · "
+                       f"stopped because: {state.get('stop_reason')}")
+        st.caption(f"Thread `{state['thread_id']}` (checkpointed; resumable)")
         with st.expander("Agent steps (multi-agent trace)"):
             for step in state.get("steps", []):
                 st.markdown(f"- {step}")
@@ -69,6 +88,16 @@ with tab_ask:
             with st.expander(f"Retrieved context ({len(passages)} passages)"):
                 for p in passages:
                     st.markdown(f"**{p['citation']}**\n\n{p['text']}")
+
+    with st.expander("Resume a saved thread"):
+        tid = st.text_input("Thread id")
+        if st.button("Load thread") and tid:
+            saved = thread_state(tid.strip())
+            if saved is None:
+                st.info("No such thread in the checkpoint database.")
+            else:
+                st.session_state["ask_state"] = saved
+                st.rerun()
 
 with tab_brief:
     st.subheader("Daily Amazon Brief → Slack Block Kit")
@@ -90,11 +119,13 @@ with tab_brief:
 with tab_eval:
     st.subheader("RAG evaluation (eval-driven development)")
     st.caption("LLM-as-judge + deterministic checks over a golden set. RAGAS-compatible metric surface.")
+    eval_mode = st.radio("Pipeline", ["loop", "baseline"], index=1, horizontal=True,
+                         help="loop = corrective-RAG graph; baseline = retrieve once, generate")
     if st.button("Run evaluation", type="primary"):
         from ronin.eval.run_eval import evaluate
         try:
-            with st.spinner("scoring the golden set… (~1 min: 6 cases × LLM judge)"):
-                result = evaluate()
+            with st.spinner("scoring the golden set… (1-2 min: 14 cases × LLM judge)"):
+                result = evaluate(eval_mode)
         except Exception as exc:  # noqa: BLE001
             if type(exc).__name__ == "RateLimitError":
                 st.warning(
@@ -132,14 +163,14 @@ with tab_arch:
 
 | Agent | Job | Technique |
 |---|---|---|
-| **Knowledge** | cited answers over internal KB | agentic/corrective RAG (retrieve → self-grade → rewrite → generate) |
+| **Knowledge** | cited answers over internal KB | corrective RAG as a graph cycle: retrieve → grade → (rewrite → retrieve)* → generate, bounded by a step budget |
 | **Intel** | competitor price/BSR analysis | deterministic deltas + LLM analyst read |
-| **Report** | daily brief → Slack | computed facts + LLM narrative + Block Kit |
+| **Report** | daily brief → Slack | confirmation gate (interrupt) → computed facts + LLM narrative + Block Kit |
 
 **Retrieval:** hybrid (dense Qdrant + BM25) → Reciprocal Rank Fusion → reranker (VoyageAI / cross-encoder) → grounded, cited generation.
 
 **Portability:** LLM provider adapter (OpenRouter ↔ **AWS Bedrock** via one env var); vector store is drop-in **MongoDB Atlas Vector Search** in prod; **Langfuse** tracing; **RAGAS**-style eval.
 
-**Scale story:** async FastAPI on ECS/Lambda, batched embeddings, semantic cache, stateless agents + LangGraph checkpointer, horizontally-scaled vector DB.
+**Scale story:** async FastAPI on ECS/Lambda, batched embeddings, semantic cache, LangGraph checkpointer (SQLite here, Postgres at scale), horizontally-scaled vector DB.
         """)
     st.caption("Built with LangGraph, LangChain, VoyageAI, Langfuse, FastAPI, Qdrant, with MongoDB Atlas and Bedrock as drop-in production targets.")

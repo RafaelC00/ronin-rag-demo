@@ -7,6 +7,7 @@ This lets the app run with zero .env edits if the OpenRouter key already exists.
 """
 from __future__ import annotations
 
+import os
 from pathlib import Path
 from functools import lru_cache
 
@@ -14,8 +15,12 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data"
-INDEX_DIR = BASE_DIR / "qdrant_data"
-CHUNKS_PATH = BASE_DIR / "qdrant_data" / "chunks.json"
+# RONIN_INDEX_DIR lets you build/evaluate against a throwaway index (e.g. the
+# local-embeddings one) without touching the index that ships with the repo.
+INDEX_DIR = Path(os.environ.get("RONIN_INDEX_DIR") or BASE_DIR / "qdrant_data")
+CHUNKS_PATH = INDEX_DIR / "chunks.json"
+# SQLite file for the LangGraph checkpointer (thread state survives restarts).
+CHECKPOINT_PATH = Path(os.environ.get("RONIN_CHECKPOINT_PATH") or BASE_DIR / ".state" / "checkpoints.sqlite")
 TRACE_DIR = BASE_DIR / ".traces"
 CONFIG_DIR = Path.home() / ".config"
 
@@ -41,6 +46,10 @@ class Settings(BaseSettings):
     aws_access_key_id: str = ""
     aws_secret_access_key: str = ""
     aws_region: str = "us-east-1"
+
+    # ---- Agent graph ----
+    ronin_max_retrievals: int = 3                   # step budget: initial retrieve + up to 2 corrective re-queries
+    ronin_confirm_report: str = "auto"              # auto (only when a Slack webhook is set) | always | never
 
     # ---- Embeddings ----
     ronin_embed_provider: str = "local"             # local | voyage

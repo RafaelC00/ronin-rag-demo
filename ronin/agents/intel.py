@@ -41,7 +41,7 @@ def _compute_facts() -> dict:
 
 
 def intel_node(state: AgentState) -> dict:
-    steps = list(state.get("steps", []))
+    steps: list[str] = []  # new steps only (steps is an append reducer)
     with span("intel.compute_deltas") as sp:
         facts = _compute_facts()
         sp["output"] = facts

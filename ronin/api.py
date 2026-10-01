@@ -8,7 +8,7 @@ from __future__ import annotations
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-from .agents.graph import run as run_graph
+from .agents.graph import run as run_graph, resume as resume_graph
 from .agents.report import report_node
 from .tracing import recent_traces, backend
 from .embeddings import get_embedder
@@ -19,6 +19,12 @@ app = FastAPI(title="Ronin Athletics — Agentic RAG", version="0.1.0")
 
 class ChatIn(BaseModel):
     question: str
+    thread_id: str | None = None   # reuse to continue a checkpointed thread
+
+
+class ResumeIn(BaseModel):
+    thread_id: str
+    approved: bool
 
 
 @app.get("/health")
@@ -34,8 +40,19 @@ def health():
 
 @app.post("/chat")
 def chat(body: ChatIn):
-    state = run_graph(body.question)
+    return _chat_payload(run_graph(body.question, body.thread_id))
+
+
+@app.post("/chat/resume")
+def chat_resume(body: ResumeIn):
+    """Resolve the human confirmation gate on a paused thread (e.g. the daily brief)."""
+    return _chat_payload(resume_graph(body.thread_id, body.approved))
+
+
+def _chat_payload(state: dict) -> dict:
     return {
+        "thread_id": state["thread_id"],
+        "pending": state.get("pending"),
         "route": state.get("route"),
         "answer": state.get("answer"),
         "citations": state.get("citations", []),
