@@ -3,6 +3,8 @@
 An **agentic RAG** system and a **fleet of collaborating agents** for a #1-on-Amazon BJJ / martial-arts apparel brand. It answers staff questions over an internal knowledge base (catalog, pricing, margins, policies, SOPs), tracks Amazon competitors, and auto-composes a **Slack Block Kit** daily brief — with full **evaluation**
 and **observability**.
 
+**Live demo:** https://ronin-rag.streamlit.app
+
 > Ronin Athletics is a fictional brand. All catalog, pricing, competitor, policy and SOP data in `data/` is synthetic.
 
 ---
